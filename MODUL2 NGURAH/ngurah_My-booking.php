@@ -33,9 +33,9 @@
     $transmision = $_POST['transmision'];
     $cc = $_POST['cc'];
     $type = $_POST['type'];
-    $fullname = $_POST['fullname'];
+    $fullname = $_POST['nama'];
     $date = $_POST['date'];
-    $time = $_POST['time'];
+    $time = $_POST['waktu'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $protocol = $_POST['protocol'];
@@ -71,7 +71,7 @@
         <th scope="row"><?php echo(rand() . "<br>"); ?></th>
         <td><?php echo $fullname?></td>
         <td><?php echo $type?></td>
-        <td>Rp.<?php echo $price?></td>
+        <td>Rp.<?php echo $harga?></td>
         <td><?php echo $phone?></td>
         <td><?php echo $email?></td>
         <td><?php echo $date?></td>
