@@ -77,7 +77,7 @@
 
             <div class="mb-3">
                 <label for="default input example">Time<span style="color: red;">*</span></label>
-                <input class="form-control" type="time" name="time" aria-label="default input example" require>
+                <input class="form-control" type="time" name="time" aria-label="default input example" required>
             </div>
 
             <div class="mb-3">
