@@ -6,7 +6,6 @@ $result = mysqli_query($connector, $query);
 
 if (isset($_GET['message'])) {
   if ($_GET['message'] == 'success') {
-    // get name
     echo "<script>alert('successfuly added to database ')</script>";
   } else if ($_GET['message'] == 'update') {
     echo "<script>alert('Data berhasil diupdate')</script>";
@@ -81,7 +80,8 @@ if (isset($_GET['message'])) {
         <div class="container">
             <p
                 style="font-family: 'Raleway'; font-style: normal; font-weight: 700; font-size: 16px; line-height: 19px; color: #757575;">
-                Jumlah Mobil : <?php echo mysqli_num_rows($result) ?></p>
+                Jumlah Mobil : <?php echo mysqli_num_rows($result) ?>
+            </p>
         </div>
     </footer>
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
