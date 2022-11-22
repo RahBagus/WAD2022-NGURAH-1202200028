@@ -12,7 +12,7 @@ $gambar = $_FILES['gambar']['name'];
 $target = "../asset/";
 
 if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target . $gambar)) {
-  $mysql = "UPDATE showroom_nama_table SET nama_mobil = '$namamobil', pemilik_mobil = '$pemilik', merk_mobil = '$merk', tanggal_beli = '$tanggalbeli', deskripsi = '$desc', foto_mobil = '$gambar', status_pembayaran = '$status' WHERE id_mobil = $id";
+  $mysql = " showroom_nama_table SET nama_mobil = '$namamobil', pemilik_mobil = '$pemilik', merk_mobil = '$merk', tanggal_beli = '$tanggalbeli', deskripsi = '$desc', foto_mobil = '$gambar', status_pembayaran = '$status'  id_mobil = $id";
   if (mysqli_query($connector, $mysql)) {
     header("location: ../pages/ListCar-Ngurah.php?message=update");
   } else {
