@@ -34,7 +34,7 @@ $result = mysqli_query($connector, $mysql);
             <div class="container collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav gap-4">
                     <li class="nav-item">
-                        <a class="nav-link" style="font-weight: bold; color:white;" href="#">Home</a>
+                        <a class="nav-link" style="font-weight: bold; color:white;" href="../pages/Home-Ngurah.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/ListCar-Ngurah.php">Mycar</a>
@@ -47,7 +47,7 @@ $result = mysqli_query($connector, $mysql);
             <?php echo $_SESSION['email'];?>
             </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="P">Profil</a></li>
+                    <li><a class="dropdown-item" href="Profil-Ngurah.php">Profil</a></li>
                     <li><a class="dropdown-item" href="../connector/logout.php">LogOut</a></li>
                 </ul>
             </div>

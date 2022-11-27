@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+if(!empty($_SESSION['email']) and !empty($_SESSION['password'])){
+
 require '../connector/connector.php';
 
 $id = $_GET['id'];
@@ -24,17 +28,30 @@ $result = mysqli_query($connector, $mysql);
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav gap-3">
-                    <a class="nav-link" href="../index.php">Home</a>
-                    <a class="nav-link" style="color: white;" href="#">MyCar</a>
-                </div>
+    <nav class="navbar navbar-expand-lg justify-content-between bg-primary">
+        <div class="container-fluid">
+            <div class="container collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-weight: bold; color:white;" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/ListCar-Ngurah.php">Mycar</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="nav-link btn btn-light m-3 btn-sm" style="font-weight: bold; color:black;" href="Add-Ngurah.php" type="button">Tambah Mobil</a>
+            <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" style="font-weight: bold; color:black;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <?php echo $_SESSION['email'];?>
+            </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="P">Profil</a></li>
+                    <li><a class="dropdown-item" href="../connector/logout.php">LogOut</a></li>
+                </ul>
             </div>
         </div>
     </nav>
-
     <section id='detail'>
         <div class="container">
             <?php
@@ -45,6 +62,7 @@ $result = mysqli_query($connector, $mysql);
                 <div class='d-flex justify-content-center align-items-start gap-5 mt-5'>
                   <img src='../asset/" . $getDetail["foto_mobil"] . "' alt='foto_mobil'>
                   <form action='../connector/edit.php?id=" . $getDetail["id_mobil"] . "' method='POST' enctype='multipart/form-data'>
+                  <input type='hidden' name='id' value='".$getDetail["id_mobil"]."'>
                     <label for='nama'>Nama Mobil</label>
                     <input type='text' id='nama' name='nama' value='" . $getDetail["nama_mobil"] . "' >
                     <label for='pemilik'>Nama Pemilik</label>
@@ -56,7 +74,7 @@ $result = mysqli_query($connector, $mysql);
                     <label for='desc'>Deskripsi</label>
                     <textarea id='desc' name='desc' style='height:200px; width: 600px; border-radius: 8px;' > " . $getDetail["deskripsi"] . " </textarea>
                     <label for='inputGroupFile01'>Foto</label>
-                    <input type='file' class='form-control' id='inputGroupFile01' value='" . $getDetail["foto_mobil"] . "' name='gambar' style='height: 40px;'>
+                    <input type='file' class='form-control' id='inputGroupFile01' value='" . $getDetail["foto_mobil"] . "' name='foto_mobil' style='height: 40px;'>
                     <label for='status'>Status Pembayaran</label>
                     <span class='d-flex'>
                       <input type='radio' name='status' id='lunas' value='Lunas' " . (($getDetail["status_pembayaran"] == 'Lunas') ? 'checked="checked"' : "") . " style='width: 15px; height: 15px; margin-right:10px;'>
@@ -77,5 +95,7 @@ $result = mysqli_query($connector, $mysql);
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</html>
 
-</html>s
+<?php }?>

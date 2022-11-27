@@ -38,7 +38,7 @@ if(!empty($_SESSION['email']) and !empty($_SESSION['password'])){
             <?php echo $_SESSION['email'];?>
             </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="P">Profil</a></li>
+                    <li><a class="dropdown-item" href="Profil-Ngurah.php">Profil</a></li>
                     <li><a class="dropdown-item" href="../connector/logout.php">LogOut</a></li>
                 </ul>
             </div>
