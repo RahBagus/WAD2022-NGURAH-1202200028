@@ -1,12 +1,11 @@
 <?php
 session_start();
-
 include ("connector.php");
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$data=mysqli_query($connector,"SELECT * FROM user_ngurah where email='$email' and password='$password'");
+$data=mysqli_query($connector,"SELECT * FROM user_ngurah where email'$email' and password='$password'");
 $jumlah=mysqli_fetch_array($data);
 $cek=mysqli_num_rows($data);
 

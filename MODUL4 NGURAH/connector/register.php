@@ -25,8 +25,6 @@ if($password === $confirm_password){
 else{
     echo "Password berbeda dengan password confirmasi anda";
 }
-
-
 	
 
 ?>
